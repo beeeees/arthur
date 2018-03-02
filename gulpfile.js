@@ -1,97 +1,246 @@
-"use strict";
+/**
+ * Gulpfile.
+ *
+ * A simple implementation of Gulp.
+ *
+ * Implements:
+ *      1. Live reloads browser with BrowserSync
+ *      2. CSS: Sass to CSS conversion, Autoprixing, Sourcemaps, CSS minification.
+ *      3. JS: Concatenates & uglifies Vendor and Custom JS files.
+ *      4. Images: Minifies PNG, JPEG, GIF and SVG images.
+ *      5. Watches files for changes in CSS or JS
+ *
+ * @since 1.0.0
+ * @author Ahmad Awais (@mrahmadawais)
+ */
 
-var gulp = require('gulp'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
-    maps = require('gulp-sourcemaps'),
-     del = require('del'),
-     autoprefixer = require('gulp-autoprefixer'),
-     browserSync = require('browser-sync').create(),
-     htmlreplace = require('gulp-html-replace'),
-     cssmin = require('gulp-cssmin');
+ /**
+  * Configuration.
+  *
+  * Project Configuration for gulp tasks.
+  *
+  * In paths you can add <<glob or array of globs>>
+  *
+  * Edit the variables as per your project requirements.
+  */
 
-gulp.task("concatScripts", function() {
-    return gulp.src([
-        'assets/js/vendor/jquery-3.2.1.slim.min.js',
-        // 'assets/js/vendor/popper.min.js',
-        // 'assets/js/vendor/bootstrap.min.js',
-        'assets/js/vendor/retina.min.js',
-        'assets/js/functions.js'
-        ])
-    .pipe(maps.init())
-    .pipe(concat('main.js'))
-    .pipe(maps.write('./'))
-    .pipe(gulp.dest('assets/js'))
-    .pipe(browserSync.stream());
-});
+var project             = 'arthur'; // Project Name.
 
-gulp.task("minifyScripts", ["concatScripts"], function() {
-  return gulp.src("assets/js/main.js")
-    .pipe(uglify())
-    .pipe(rename('main.min.js'))
-    .pipe(gulp.dest('public/assets/js'));
-});
 
-gulp.task('compileSass', function() {
-  return gulp.src("assets/css/style.scss")
-      .pipe(maps.init())
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer())
-      .pipe(maps.write('./'))
-      .pipe(gulp.dest('assets/css'))
-      .pipe(browserSync.stream());
-});
+var styleSRC            = './scss/main.scss'; // Path to main .scss file.
+var styleDestination    = './'; // Path to place the compiled CSS file.
+                // Defualt set to root folder.
 
-gulp.task("minifyCss", ["compileSass"], function() {
-  return gulp.src("assets/css/style.css")
-    .pipe(cssmin())
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('public/assets/css'));
-});
 
-gulp.task('watchFiles', function() {
-  gulp.watch('assets/css/**/*.scss', ['compileSass']);
-  gulp.watch('assets/js/*.js', ['concatScripts']);
-})
+var jsVendorSRC         = './javascript/vendors/*.js'; // Path to JS vendors folder.
+var jsVendorDestination = './javascript/'; // Path to place the compiled JS vendors file.
+var jsVendorFile        = 'vendors'; // Compiled JS vendors file name.
+                  // Default set to vendors i.e. vendors.js.
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
 
-gulp.task('clean', function() {
-  del(['public', 'assets/css/style.css*', 'assets/js/main*.js*']);
-});
+var jsCustomSRC         = './javascript/custom/*.js'; // Path to JS custom scripts folder.
+var jsCustomDestination = './javascript/'; // Path to place the compiled JS custom scripts file.
+var jsCustomFile        = 'custom'; // Compiled JS custom file name.
+                  // Default set to custom i.e. custom.js.
 
-gulp.task('renameSources', function() {
-  return gulp.src('index.html')
-    .pipe(htmlreplace({
-        'js': 'assets/js/main.min.js',
-        'css': 'assets/css/style.min.css'
+
+// Watch files paths.
+var styleWatchFiles     = './scss/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var vendorJSWatchFiles  = './javascript/vendors/*.js'; // Path to all vendors JS files.
+var customJSWatchFiles  = './javascript/custom/*.js'; // Path to all custom JS files.
+var phpWatchFiles  = './*.php'; // Path to all custom php files.
+
+
+// Browsers you care about for autoprefixing.
+// Browserlist https://github.com/ai/browserslist
+const AUTOPREFIXER_BROWSERS = [
+    'last 2 version',
+    '> 1%',
+    'ie >= 9',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4',
+    'bb >= 10'
+  ];
+
+
+/**
+ * Load Plugins.
+ *
+ * Load gulp plugins and assing them semantic names.
+ */
+var gulp         = require('gulp'); // Gulp of-course
+
+// CSS related plugins.
+var sass         = require('gulp-sass'); // Gulp pluign for Sass compilation
+var minifycss    = require('gulp-uglifycss'); // Minifies CSS files
+var autoprefixer = require('gulp-autoprefixer'); // Autoprefixing magic
+
+// JS related plugins.
+var concat       = require('gulp-concat'); // Concatenates JS files
+var uglify       = require('gulp-uglify'); // Minifies JS files
+
+// Utility related plugins.
+var rename       = require('gulp-rename'); // Renames files E.g. style.css -> style.min.css
+var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
+var notify       = require('gulp-notify'); // Sends message notification to you
+var browserSync  = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
+var reload       = browserSync.reload; // For manual browser reload.
+
+
+/**
+ * Task: `browser-sync`.
+ *
+ * Live Reloads, CSS injections, Localhost tunneling.
+ *
+ * This task does the following:
+ *    1. Sets the project URL
+ *    2. Sets inject CSS
+ *    3. You may define a custom port
+ *    4. You may want to stop the browser from openning automatically
+ */
+ gulp.task( 'browser-sync', function() {
+  browserSync.init( {
+
+    // For more options
+    // @link http://www.browsersync.io/docs/options/
+
+    // Project URL.
+    proxy: 'http://arthur.test',
+    host: 'arthur.test',
+
+    // Stop the browser from automatically opening.
+    open: false,
+
+    // Inject CSS changes.
+    // Commnet it to reload browser for every CSS change.
+    // injectChanges: true,
+
+    // Use a specific port (instead of the one auto-detected by Browsersync).
+    // port: 7000,
+
+  } );
+ });
+
+
+/**
+ * Task: `styles`.
+ *
+ * Compiles Sass, Autoprefixes it and Minifies CSS.
+ *
+ * This task does the following:
+ *    1. Gets the source scss file
+ *    2. Compiles Sass to CSS
+ *    3. Writes Sourcemaps for it
+ *    4. Autoprefixes it and generates style.css
+ *    5. Renames the CSS file with suffix .min.css
+ *    6. Minifies the CSS file and generates style.min.css
+ *    7. Injects CSS or reloads the browser via browserSync
+ */
+gulp.task('styles', function () {
+  gulp.src( styleSRC )
+    .pipe( sourcemaps.init() )
+    .pipe( sass( {
+      errLogToConsole: true,
+      outputStyle: 'compact',
+      //outputStyle: 'compressed',
+      // outputStyle: 'nested',
+      // outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['styles'].concat()
+    } ) )
+    .pipe( sourcemaps.write( { includeContent: false } ) )
+    .pipe( sourcemaps.init( { loadMaps: true } ) )
+    .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
+
+    .pipe( sourcemaps.write ( styleDestination ) )
+    .pipe( gulp.dest( styleDestination ) )
+    .pipe( browserSync.reload({stream:true}) )
+
+    .pipe( rename( { suffix: '.min' } ) )
+    .pipe( minifycss( {
+      maxLineLen: 10
     }))
-    .pipe(gulp.dest('public/'));
+    .pipe( gulp.dest( styleDestination ) )
+    .pipe( browserSync.reload({stream:true}) )
+    .pipe( notify( { message: 'TASK: "styles" Completed!', onLast: true } ) )
 });
 
-gulp.task("build", ['minifyScripts', 'minifyCss'], function() {
-  return gulp.src(['*.html', 'favicon.ico',
-                   "assets/img/**", "assets/fonts/**"], { base: './'})
-            .pipe(gulp.dest('public'));
+
+/**
+ * Task: `vendorJS`.
+ *
+ * Concatenate and uglify vendor JS scripts.
+ *
+ * This task does the following:
+ *    1. Gets the source folder for JS vendor files
+ *    2. Concatenates all the files and generates vendors.js
+ *    3. Renames the JS file with suffix .min.js
+ *    4. Uglifes/Minifies the JS file and generates vendors.min.js
+ */
+gulp.task( 'vendorsJs', function() {
+  gulp.src( jsVendorSRC )
+    .pipe( concat( jsVendorFile + '.js' ) )
+    .pipe( gulp.dest( jsVendorDestination ) )
+    .pipe( rename( {
+      basename: jsVendorFile,
+      suffix: '.min'
+    }))
+    .pipe( uglify() )
+    .pipe( gulp.dest( jsVendorDestination ) )
+    .pipe( notify( { message: 'TASK: "vendorsJs" Completed!', onLast: true } ) );
 });
 
-gulp.task('serve', ['watchFiles'], function(){
-  browserSync.init({
-        server: "./"
-    });
 
-    gulp.watch("assets/css/**/*.scss", ['watchFiles']);
-    gulp.watch("*.html").on('change', browserSync.reload);
+/**
+ * Task: `customJS`.
+ *
+ * Concatenate and uglify custom JS scripts.
+ *
+ * This task does the following:
+ *    1. Gets the source folder for JS custom files
+ *    2. Concatenates all the files and generates custom.js
+ *    3. Renames the JS file with suffix .min.js
+ *    4. Uglifes/Minifies the JS file and generates custom.min.js
+ */
+gulp.task( 'customJs', function() {
+  gulp.src( jsCustomSRC )
+    .pipe( concat( jsCustomFile + '.js' ) )
+    .pipe( gulp.dest( jsCustomDestination ) )
+    .pipe( rename( {
+      basename: jsCustomFile,
+      suffix: '.min'
+    }))
+    .pipe( uglify() )
+    .pipe( gulp.dest( jsCustomDestination ) )
+    .pipe( notify( { message: 'TASK: "customJs" Completed!', onLast: true } ) );
 });
 
-gulp.task("default", ["clean", 'build'], function() {
-  gulp.start('renameSources');
+/**
+ * Task: `php`.
+ *
+ * Notifies php task has run (reload on save)
+ */
+gulp.task( 'php', function() {
+  gulp.src( phpWatchFiles )
+    .pipe( notify( { message: 'TASK: "php" Completed!', onLast: true } ) );
 });
+
+
+
+
+ /**
+  * Watch Tasks.
+  *
+  * Watches for file changes and runs specific tasks.
+  */
+ gulp.task( 'default', ['styles', 'vendorsJs', 'customJs', 'browser-sync'], function () {
+  gulp.watch( styleWatchFiles, [ 'styles' ] );
+  gulp.watch( phpWatchFiles, ['php', reload]);
+  gulp.watch( vendorJSWatchFiles, [ 'vendorsJs', reload ]  );
+  gulp.watch( customJSWatchFiles, [ 'customJs', reload ]  );
+ });

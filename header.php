@@ -43,14 +43,14 @@
     <meta name="msapplication-TileImage" content="media/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" type="text/css" href="vendors/slick-slider/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="vendors/slick-slider/slick/slick.min.js"></script>
+    <script type="text/javascript" src="javascript/vendors/vendors.min.js"></script>
     <script type="text/javascript" src="javascript/application/scripts.min.js"></script>
+    <script type="text/javascript" src="javascript/custom.min.js"></script>
 
     <?php include 'add-on-scripts.php'; ?>
-    
+
 </head>

@@ -1,34 +1,29 @@
 {
-  "name": "doist",
+  "name": "sitename",
   "version": "1.0.0",
-  "description": "doist test project",
-  "main": "index.js",
+  "description": "Gulp for sitename",
+  "repository": "bitbucket",
+  "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp serve",
-    "start": "http-server",
-    "postinstall": "gulp"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "bethany brown",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/beeeees/doist"
-  },
-  "dependencies": {
-    "browser-sync": "^2.18.13",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-html-replace": "^1.6.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-uglify": "^3.0.0",
-    "http-server": "^0.10.0"
-  },
+  "author": "Steadfast Creative",
+  "license": "GPL-2.0",
+  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.18.13"
+    "jquery": "^3.2.1",
+    "bootstrap": "^4.0.0-beta",
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-uglifycss": "^1.0.4",
+    "popper.js": "^1.12.5"
   }
 }
