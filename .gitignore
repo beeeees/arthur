@@ -1,0 +1,19 @@
+### Sass ###
+.sass-cache/
+*.css.map
+
+### JS maps ###
+*.js.map
+
+### Node modules ###
+node_modules/
+
+
+### Compiled files ###
+public/
+
+# Ignore Mac DS_Store files
+.DS_Store
+**/.DS_Store
+*.DS_Store
+

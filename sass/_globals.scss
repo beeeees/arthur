@@ -1,0 +1,138 @@
+.contain {
+    max-width: 1290px;
+    margin: 0 auto;
+    padding: 0 50px;
+    &.narrow {
+	    max-width: 960px;
+	    padding: 0 25px;
+    }
+}
+
+.modals-hidden {
+	display: none;
+}
+
+.perma-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.v- {
+	&center {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		@include transform( translate( 0, -50% ) );
+	}
+	&top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	&bottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
+.screen {
+	background-size: cover;
+	background-position: center;
+	&-100 { height: 100vh !important;	}
+	&-75 { height: 75vh !important;	}
+	&-50 { height: 50vh !important;	}
+	@media ( max-width: $screen-xs ) {
+		height: auto !important;
+	}
+}
+
+.page-fullscreen {
+	header {
+		position: absolute;
+		width: 100%;
+	}
+}
+
+.no-gutter {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	> [class*='col-'] {
+	    padding-right:0 !important;
+	    padding-left:0 !important;
+    }
+}
+
+.permacover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.left { float: left; }
+.right { float: right; }
+
+.logo {
+	display: inline-block;
+	width: 100px;
+    height: 23px;
+    overflow: hidden;
+    background-size: contain;
+    object-fit: contain;
+    svg {
+        max-width: 100%;
+        object-fit: contain;
+        display: block;
+        * {
+            transition: all 250ms $easeOutQuint;
+        }
+    }
+    &:hover {
+        svg {
+            * {
+                fill: $gold;
+            }
+        }
+    }
+}
+body {
+	.desktop {
+		display: block;
+	}
+	.mobile {
+		display: none;
+	}
+}
+@media ( max-width: $screen-sm-max ) {
+	body {
+		.desktop {
+			display: none;
+		}
+		.mobile {
+			display: block;
+		}
+	}
+}
+
+body.mobile {
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+}
+
+[data-trigger] {
+	cursor: pointer;
+	* {
+		pointer-events: none;
+	}
+}

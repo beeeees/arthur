@@ -1,0 +1,172 @@
+nav {
+    position: absolute;
+    width: 100%;
+    padding-top: 140px;
+    left: 0;
+    .nav-items {
+        float: right;
+        @include unstyle-lists();
+        overflow: visible;
+        li {
+            display: inline-block;
+            margin-right: 40px;
+            &:last-child {
+                margin-right: 0px;
+            }
+            a {
+                color: $white;
+                text-decoration: none;
+                letter-spacing: .022em;
+                font-weight: 300;
+                position: relative;
+                display: inline-block;
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    border-bottom: 2px solid $white;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    opacity: 0;
+                    transition: all 250ms $easeOutQuint;
+                }
+                &:hover {
+                    color: $gold;
+                    &:after {
+                        bottom: -5px;
+                        opacity: 1;
+                        border-bottom-color: $gold;
+                    }
+                }
+            }
+        }
+    }
+    .nav-icon {
+        display: block;
+        width: 19px;
+        height: 20px;
+        position: absolute;
+        right: 40px;
+        top: 60px;
+        cursor: pointer;
+        transition: all 250ms $easeOutBack;
+        z-index: 101;
+        display: none;
+        span,
+        &:before,
+        &:after {
+            display: block;
+            height: 2px;
+            background: $white;
+            position: absolute;
+            transition: all 250ms $easeOutBack;
+            transform: translate(0, 0) rotate(0);
+        }
+        span {
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 0;
+        }
+        &:before,
+        &:after {
+            content: "";
+            top: 4px;
+            right: 0;
+            width: 15px;
+        }
+        &:after {
+            top: auto;
+            bottom: 4px;
+        }
+    }
+    @media ( max-width: $screen-sm-max ) {
+        padding: 60px 15px 0;
+        .logo {
+            width: 75px;
+            height: 18px;
+            background: url($svg_dir+'logo.svg') center no-repeat;
+            background-size: contain;
+            svg {
+                display: none;
+            }
+            position: relative;;
+            z-index: 101;
+        }
+        .nav-icon {
+            display: block;
+        }
+        .nav-items {
+            pointer-events: none;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            opacity: 0;
+            transition: all 250ms $easeOutQuint;
+            padding: 130px 40px 50px;
+            background-image: linear-gradient(-143deg, #3D3D3D 4%, #222222 81%);
+            z-index: 100;
+            li {
+                display: block;
+                margin: 0 0 25px;
+                opacity: 0;
+                transform: translateY(-100%);
+                transition: all 250ms $easeOutBack;
+                a {
+                    font: $font-bold;
+                    font-size: 22px;
+                    &:after {
+                        display: none;;
+                    }
+                    &:active {
+                        color: $gold;
+                    }
+                }
+            }
+        }
+    }
+}
+body.nav-open {
+    height: 100vh;
+    overflow: hidden;
+    nav {
+        .logo {
+            // position: fixed;
+        }
+        .nav-icon {
+            transform: rotate(45deg);
+            // position: fixed;;
+            &:before,
+            &:after {
+                width: 100%;
+                top: 50%;
+                transform: translate(0, -50%) rotate(90deg);
+            }
+            &:after {
+                top: auto;
+                bottom: 50%;
+                transform: translate(0, -50%) rotate(-0deg);
+                margin-bottom: -2px;
+            }
+            span {
+                width: 0;
+            }
+        }
+        .nav-items {
+            opacity: 1;
+            pointer-events: all;
+            li {
+                opacity: 1;
+                transform: translateY(0);
+                @for $i from 1 through 10 {
+					&:nth-child(#{$i}) {
+						@include transition-delay(35ms * $i + 35ms);
+					}
+				}
+            }
+        }
+    }
+}

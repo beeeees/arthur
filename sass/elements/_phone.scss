@@ -1,0 +1,52 @@
+.phone {
+    position: absolute;
+    bottom: -10px;
+    left: -155px;
+    width: 920px;
+    height: 475px;
+    * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    &-body {
+        background: url($img_dir + 'phone/phone_body.png');
+        width: 917px;
+        height: 475px;
+        z-index: 2;
+    }
+    &-shadow {
+        background: url($img_dir + 'phone/phone_shadow.png');
+        width: 949px;
+        height: 426px;
+        top: 40px;
+        z-index: 1;
+    }
+    &-main {
+        background: url($img_dir + 'phone/phone_main.png');
+        width: 815px;
+        height: 416px;
+        top: 24px;
+        left: 52px;
+        z-index: 4;
+    }
+    &-ui-2 {
+        background: url($img_dir + 'phone/phone_ui-2.png');
+        width: 327px;
+        height: 179px;
+        top: 235px;
+        left: 309px;
+        z-index: 3;
+    }
+    &-ui-1 {
+        background: url($img_dir + 'phone/phone_ui-1.png');
+        width: 327px;
+        height: 179px;
+        top: 160px;
+        left: 487px;
+        z-index: 5;
+    }
+}

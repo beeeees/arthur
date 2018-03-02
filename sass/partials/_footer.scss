@@ -1,0 +1,88 @@
+footer {
+    background: $gold !important;
+    color: $black;
+    padding: 100px 0 90px;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 0px !important;
+    h6 {
+        margin-bottom: 30px;
+        letter-spacing: .76px;
+    }
+    p {
+        color: $white;
+        font-weight: 200;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        letter-spacing: .022em;
+        line-height: 1.5em;
+    }
+    @media ( max-width: $screen-sm-max ) {
+        padding: 50px 0;
+        h6 {
+            color: $white;
+        }
+        p {
+            display: none;
+        }
+    }
+}
+
+.footer-legal {
+    color: $grey_light;
+    font: $font-light;
+    font-size: 12px;
+    letter-spacing: .19px;
+    line-height: 110px;
+    height: 110px;
+    a {
+        text-decoration: none;
+        color: inherit;
+        line-height: 1em;
+        transition: all 250ms $easeOutQuint;
+        &:hover {
+            color: $gold;
+            &:not([href*=mailto]) {
+                transform: scale(1.2, 1.2);
+            }
+        }
+    }
+    .right {
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px;
+            i {
+                font-size: 20px;
+            }
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+    }
+    @media ( max-width: $screen-sm-max ) {
+        line-height: 1em;
+        text-align: center;
+        position: relative;
+        padding-top: 20px;
+        .right,
+        .left {
+            float: none;
+            display: block;
+            width: 100%;
+        }
+        a[href*="mailto"] {
+            display: none;
+        }
+        a {
+            opacity: .75;
+        }
+        .left {
+            position: absolute;
+            left: 0;
+            top: 60px;
+            font-size: 10px;
+            opacity: .5;
+        }
+    }
+}

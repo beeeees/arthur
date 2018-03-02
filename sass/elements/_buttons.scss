@@ -1,0 +1,81 @@
+input[type="submit"],
+.btn {
+	@include easeO();
+	@include no-user-select();
+	-webkit-appearance: none;
+	border-radius: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
+	height: 48px;
+	font: 14px/44px $body_font;
+	border: 2px solid $gold;
+	letter-spacing: .07em;
+	opacity: 1;
+	cursor: pointer;
+	padding: 0 45px;
+	color: $gold;
+	svg {
+		margin-left: 2px;
+		transform: translate(0, 1px);
+		transition: all 250ms $easeOutQuint;
+		* {
+			transition: inherit;
+		}
+	}
+	&:hover {
+		color: $white;
+		background: $gold;
+		svg {
+			transform: translate(5px, 1px);
+			* {
+				fill : $white;
+			}
+		}
+	}
+	&.dark {
+		border-color: $black;
+		color: $black;
+		font-weight: 700;
+		svg {
+			* {
+				fill: $black;
+			}
+		}
+		&:hover {
+			background: $black;
+			color: $white;
+			svg {
+				* {
+					fill: $white;
+				}
+			}
+		}
+	}
+	@media ( max-width: $screen-sm-max ) {
+		height: 40px;
+		padding: 0 20px;
+		font-size: 10px;
+		line-height: 38px;
+		svg {
+			transform: scale(.6, .6) translate(-2px, 0px);
+			transform-origin: bottom;
+		}
+		&:hover {
+			svg {
+				transform: scale(.6, .6) translate(2px, 0px);
+			}
+		}
+	}
+}
+
+input.btn,
+button.btn {
+	-webkit-appearance: none;
+	border: none;
+}

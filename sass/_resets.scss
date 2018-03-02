@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font: 14px/1.42em $body_font;
+	color: $white;
+	min-height: 100vh;
+	background-color: $grey;
+	overflow-x: hidden !important;
+	background-image: linear-gradient(-143deg, rgba(61,61,61,1) 4%, rgba(34,34,34,1) 81%);
+}

@@ -1,0 +1,167 @@
+/*
+** START: MIXINS
+*/
+
+@mixin unstyle-lists() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	overflow: hidden;
+}
+
+@mixin easeOut($property, $duration) {
+	-webkit-transition: $property $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	   -moz-transition: $property $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	     -o-transition: $property $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+		    transition: $property $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+
+@mixin ease($property, $duration) {
+	-webkit-transition: $property $duration cubic-bezier(0.86, 0, 0.07, 1);
+	   -moz-transition: $property $duration cubic-bezier(0.86, 0, 0.07, 1);
+	     -o-transition: $property $duration cubic-bezier(0.86, 0, 0.07, 1);
+		    transition: $property $duration cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@mixin easeO() {
+	@include easeOut(all, 250ms);
+}
+
+@mixin easeOutTrans($duration) {
+	-webkit-transition: -webkit-transform $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	   -moz-transition: transform $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	    -ms-transition: -ms-transform $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+	     -o-transition: transform $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+		    transition: transform $duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+
+@mixin transform($property) {
+	transform:$property;
+	-ms-transform:$property;
+	-webkit-transform:$property;
+}
+
+@mixin h2_line() {
+	display: block;
+	width: 90%;
+	content: "";
+	height: 2px;
+	margin: 0 auto;
+	background: #FFF;
+	position: relative;
+	left: -2px;
+}
+
+@mixin rotate($degree) {
+	-ms-transform:rotate($degree);
+	-moz-transform:rotate($degree);
+	-webkit-transform:rotate($degree);
+	transform:rotate($degree);
+}
+
+@mixin scale($width,$height) {
+	-ms-transform:scale($width,$height);
+	-moz-transform:scale($width,$height);
+	-webkit-transform:scale($width,$height);
+	transform:scale($width,$height);
+}
+
+@mixin translate($left, $top) {
+	-ms-transform: translate($left, $top);
+	-webkit-transform: translate($left, $top);
+	-moz-transform: translate($left, $top);
+	transform: translate($left, $top);
+}
+
+@mixin translate3D($x, $y, $z) {
+	-ms-transform: translate3D($x, $y, $z);
+	-webkit-transform: translate3D($x, $y, $z);
+	-moz-transform: translate3D($x, $y, $z);
+	transform: translate3D($x, $y, $z);
+}
+
+@mixin ease-translate($duration) {
+	@include easeOutQuint(-ms-transform, $duration);
+	@include easeOutQuint(-webkit-transform, $duration);
+	@include easeOutQuint(-moz-transform, $duration);
+	@include easeOutQuint(transform, $duration);
+}
+
+@mixin no-user-select() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+@mixin user-select() {
+	-webkit-touch-callout: auto;
+	-webkit-user-select: auto;
+	-khtml-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
+}
+
+@mixin all-column-count($count) {
+	-webkit-column-count:$count;
+	-moz-column-count:$count;
+	column-count:$count;
+}
+
+@mixin top-bar-tick($color, $border-color) {
+	position: relative;
+	padding-top: 30px;
+	background: url($img_dir+'icon_divider-arrow-'+$color) center top no-repeat;
+	&:before,&:after {
+		position: absolute;
+		top: 0;
+		content: "";
+		left: 0;
+		right: 52%;
+		border-bottom: 2px solid $border-color;
+		height: 0;
+	}
+	&:after {
+		left: 52%;
+		right: 0;
+	}
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+@mixin animation($animation) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+@mixin placeholder($attr) {
+	
+}
+
+@mixin blur($radius) {
+-webkit-filter: blur($radius); 
+   -moz-filter: blur($radius);
+    -ms-filter: blur($radius);
+     -o-filter: blur($radius);
+        filter: blur($radius);
+        filter: url(#blur);   
+        filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$radius');
+}
