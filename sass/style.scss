@@ -9,7 +9,6 @@
 // Global
 @import 'resets';
 @import 'globals';
-@import 'theme-globals';
 
 // Partials
 @import 'partials/header';
@@ -27,3 +26,7 @@
 // Page Layouts
 @import 'page-layouts/404';
 @import 'page-layouts/home';
+@import 'page-layouts/pages';
+@import 'page-layouts/user-research';
+@import 'page-layouts/workshops';
+@import 'page-layouts/workshops-v2';

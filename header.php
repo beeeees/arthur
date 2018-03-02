@@ -43,7 +43,7 @@
     <meta name="msapplication-TileImage" content="media/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

@@ -3,6 +3,7 @@ $black: #3D3D3D;
 $white: #FFF;
 $grey: #3D3D3D;
 $grey_light: #7F7F7F;
+$gray: #969696;
 $gold: #F3B85C;
 
 // Brand Colors
@@ -12,12 +13,14 @@ $brand_color_secondary : #FFF;
 /* FONTS */
 $montserrat : 'Montserrat', sans-serif;
 
+$sofia: 'Sofia Pro', 'Montserrat', sans-serif;
+
 /* EASILY CHANGALBE FONTS */
-$display_font : $montserrat;
-$body_font : $montserrat;
-$font-light : 300 1em/1em $montserrat;
-$font-bold : 500 1em/1em $montserrat;
-$font-extra-bold : 800 1em/1em $montserrat;
+$display_font : $sofia;
+$body_font : $sofia;
+$font-light : 300 1em/1em $sofia;
+$font-bold : 500 1em/1em $sofia;
+$font-extra-bold : 800 1em/1em $sofia;
 
 
 $img_dir: '../media/images/';

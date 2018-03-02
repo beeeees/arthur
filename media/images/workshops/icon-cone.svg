@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="202px" viewBox="0 0 200 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-cone</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-5.3%" y="-4.7%" width="110.6%" height="109.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.7 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Workshops" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Workshops-FINAL" transform="translate(-621.000000, -3560.000000)">
+            <g id="icon-cone" filter="url(#filter-1)" transform="translate(627.000000, 3565.000000)">
+                <path d="M134.354747,60 L0.877777189,136.971068" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M148.104747,80 L94.3258633,111.012228" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M94.1047474,49 L40.3258633,80.0122275" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M94.1047474,37 L54.1864001,60.0193856" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M94.1047474,80 L40.3258633,111.012228" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(67.215305, 95.506114) scale(-1, 1) translate(-67.215305, -95.506114) "></path>
+                <path d="M148.104747,49 L94.3258633,80.0122275" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(121.215305, 64.506114) scale(-1, 1) translate(-121.215305, -64.506114) "></path>
+                <path d="M134.244211,37 L94.3258633,60.0193856" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(114.285037, 48.509693) scale(-1, 1) translate(-114.285037, -48.509693) "></path>
+                <path d="M187.104747,137 L94.3431038,190.492095" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M161.104747,99 L94.3316102,137.505517" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M94.1047474,60 L27.3316102,98.5055168" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M94.1047474,99 L27.3316102,137.505517" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(60.718179, 118.252758) scale(-1, 1) translate(-60.718179, -118.252758) "></path>
+                <path d="M161.104747,60 L94.3316102,98.5055168" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(127.718179, 79.252758) scale(-1, 1) translate(-127.718179, -79.252758) "></path>
+                <path d="M174.104747,118 L94.337357,163.998806" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M93.1047474,72 L13.337357,117.998806" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M94.1047474,118 L14.337357,163.998806" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(54.221052, 140.999403) scale(-1, 1) translate(-54.221052, -140.999403) "></path>
+                <path d="M174.104747,72 L94.337357,117.998806" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(134.221052, 94.999403) scale(-1, 1) translate(-134.221052, -94.999403) "></path>
+                <path d="M121.604747,41 L94.6806533,56.5260963" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M93.6047474,26 L67.5469384,41.0265427" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M93.6047474,41 L66.6806533,56.5260963" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(80.142700, 48.763048) scale(-1, 1) translate(-80.142700, -48.763048) "></path>
+                <path d="M122.471031,26 L94.6806533,42.0256489" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(108.575842, 34.012824) scale(-1, 1) translate(-108.575842, -34.012824) "></path>
+                <path d="M108.604747,23 L94.3110689,31.2426182" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M93.6047474,23 L79.3110689,31.2426182" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(86.457908, 27.121309) scale(-1, 1) translate(-86.457908, -27.121309) "></path>
+                <path d="M108.604747,14 L94.3110689,22.2426182" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(101.457908, 18.121309) scale(-1, 1) translate(-101.457908, -18.121309) "></path>
+                <path d="M93.6047474,14 L79.3110689,22.2426182" id="Line-11" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M186.541382,60 L54,136.431551" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(120.270691, 98.215775) scale(-1, 1) translate(-120.270691, -98.215775) "></path>
+                <path d="M93.5586229,137 L0,190.951683" id="Line-11" stroke="#FFFFFF" stroke-linecap="square" transform="translate(46.779311, 163.975841) scale(-1, 1) translate(-46.779311, -163.975841) "></path>
+                <path d="M94,2 L94,190" id="Line-14" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M187.5,136.5 L94.5016568,1.502405" id="Line-16" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M93.5,136.5 L0.5,1.5" id="Line-16" stroke="#FFFFFF" stroke-linecap="square" transform="translate(47.000000, 69.000000) scale(-1, 1) translate(-47.000000, -69.000000) "></path>
+                <circle id="Oval-5" fill="#FFFFFF" cx="94" cy="1.5" r="1"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

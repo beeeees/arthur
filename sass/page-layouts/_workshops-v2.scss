@@ -1,0 +1,68 @@
+.workshops-v2 {
+  background-color: #1d1d1d;
+  background-image: none;
+  nav {
+    padding-top: 40px;
+  }
+
+  /******* TYPE ********/
+  h1 {
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 0.021em;
+  }
+
+  p.lead {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+
+
+  /******* COPONENTS ********/
+  .btn {
+    padding: 0 25px;
+    border-width: 1px;
+    height: 42px;
+    line-height: 2.9em;
+    color: #fff;
+    margin-top: 10px;
+    svg {
+      margin-left: 45px;
+      transform: translate(0, 1px);
+      transition: all 250ms $easeOutQuint;
+      * {
+        transition: inherit;
+      }
+    }
+
+  }
+  #main-content {
+    @include retina-background-image("media/images/workshops/bg-header", "jpg", cover);
+    #hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .lead {
+        opacity: 0.85;
+      }
+      .caption {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        p {
+          color: $gray;
+          font-size: 12px;
+          em {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+
+  //
+}

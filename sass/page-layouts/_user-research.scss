@@ -1,0 +1,50 @@
+
+/**** MOM's SPAGHETTII USER-RESERACH PAGE ****/
+body.user-research #hero {
+    background-image: url(../media/images/user-research-interview-2c.jpg);
+    background-size: cover;
+}
+
+@media (max-width: 991px) {
+    body.user-research #hero {
+        text-align: left;
+    }
+}
+@media (max-width: 991px) {
+body.user-research #hero .btn {
+    transform: translateX(10px);
+    }
+}
+
+#get-answers {
+    background-color: #3D3D3D;
+}
+#time-effort-cta {
+    margin-top: 50px;
+}
+
+#research-process {
+    background: none;
+    box-shadow: none;
+}
+
+#research-process ul li {
+    margin:14px 0;
+}
+
+body.extension.user-research h2 {
+    color: #fff;
+}
+
+.questions {
+    background: #3d3d3d;
+    height: 200px;
+}
+.questions-block-text {
+    color: #fff;
+    font: 500 1em/1em "Montserrat", sans-serif;
+    font-size: 21px;
+    letter-spacing: .34px;
+    line-height: 1.2em;
+    margin-bottom: 8px;
+}

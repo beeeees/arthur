@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="199px" height="199px" viewBox="0 0 199 199" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-cirlce</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.5%" y="-4.5%" width="109.1%" height="109.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Workshops" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Workshops-FINAL" transform="translate(-160.000000, -3562.000000)" stroke="#FFFFFF">
+            <g id="icon-cirlce" filter="url(#filter-1)" transform="translate(166.000000, 3568.000000)">
+                <circle id="Oval-4" cx="93.5" cy="93.5" r="93.5"></circle>
+                <ellipse id="Oval" cx="93.5" cy="14.5" rx="21.5" ry="10.5"></ellipse>
+                <ellipse id="Oval" cx="94" cy="21.5" rx="43" ry="21.5"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="32" rx="61.5" ry="31"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="47.5" rx="76.5" ry="38.5"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="65" rx="87.5" ry="44"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="83.5" rx="92.5" ry="46.5"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="103" rx="92.5" ry="46"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="122" rx="87.5" ry="44"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="139" rx="76.5" ry="38"></ellipse>
+                <ellipse id="Oval" cx="93" cy="154" rx="62" ry="31"></ellipse>
+                <ellipse id="Oval" cx="94" cy="165.5" rx="43" ry="21.5"></ellipse>
+                <ellipse id="Oval" cx="93.5" cy="172" rx="22.5" ry="11"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="173px" height="197px" viewBox="0 0 173 197" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-square</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.5%" y="-4.5%" width="109.1%" height="109.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.7 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Workshops" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Workshops-FINAL" transform="translate(-1110.000000, -3563.000000)" stroke="#FFFFFF">
+            <g id="icon-square" transform="translate(1103.000000, 3568.000000)">
+                <g id="Group-5" filter="url(#filter-1)">
+                    <path d="M96,1.44337567 L171.973375,45.3066243 C173.520381,46.1997883 174.473375,47.8504234 174.473375,49.6367513 L174.473375,137.363249 C174.473375,139.149577 173.520381,140.800212 171.973375,141.693376 L96,185.556624 C94.4529946,186.449788 92.5470054,186.449788 91,185.556624 L15.0266247,141.693376 C13.4796194,140.800212 12.5266247,139.149577 12.5266247,137.363249 L12.5266247,49.6367513 C12.5266247,47.8504234 13.4796194,46.1997883 15.0266247,45.3066243 L91,1.44337567 C92.5470054,0.550211698 94.4529946,0.550211698 96,1.44337567 Z" id="Polygon"></path>
+                    <path d="M93.5,1.5 L93.5,185.5" id="Line-10" stroke-linecap="square"></path>
+                    <path d="M173.5,47.5 L13.1682399,139.9572" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M173.5,78.5 L40.0230298,155.471068" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M173.5,47.5 L13.1682399,139.9572" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M147.5,31.5 L13.1567462,108.970621" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M121.5,16.5 L13.1452526,78.9840425" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M173.5,47.5 L13.1682399,139.9572" id="Line-11" stroke-linecap="square" transform="translate(93.334120, 93.728600) scale(-1, 1) translate(-93.334120, -93.728600) "></path>
+                    <path d="M173.5,78.5 L40.0230298,155.471068" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M146.5,78.5 L13.0230298,155.471068" id="Line-11" stroke-linecap="square" transform="translate(79.761515, 116.985534) scale(-1, 1) translate(-79.761515, -116.985534) "></path>
+                    <path d="M173.5,31.5 L40.0230298,108.471068" id="Line-11" stroke-linecap="square" transform="translate(106.761515, 69.985534) scale(-1, 1) translate(-106.761515, -69.985534) "></path>
+                    <path d="M174.5,108.5 L66.1452526,170.984043" id="Line-11" stroke-linecap="square"></path>
+                    <path d="M120.5,108.5 L13.0115361,170.48449" id="Line-11" stroke-linecap="square" transform="translate(66.755768, 139.492245) scale(-1, 1) translate(-66.755768, -139.492245) "></path>
+                    <path d="M174.5,16.5 L67.0115361,78.4844899" id="Line-11" stroke-linecap="square" transform="translate(120.755768, 47.492245) scale(-1, 1) translate(-120.755768, -47.492245) "></path>
+                    <path d="M147.5,31.5 L147.5,155.5" id="Line-12" stroke-linecap="square"></path>
+                    <path d="M39.5,31.5 L39.5,155.5" id="Line-12" stroke-linecap="square"></path>
+                    <path d="M121.5,16.5 L121.5,170.5" id="Line-12" stroke-linecap="square"></path>
+                    <path d="M66.5,16.5 L66.5,170.5" id="Line-12" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

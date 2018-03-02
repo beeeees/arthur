@@ -133,7 +133,7 @@
 // keyframes mixin
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
-    @content; 
+    @content;
   }
   @-moz-keyframes #{$name} {
     @content;
@@ -143,8 +143,9 @@
   }
   @keyframes #{$name} {
     @content;
-  } 
+  }
 }
+
 @mixin animation($animation) {
   -o-animation: $animation;
   -moz-animation: $animation;
@@ -153,15 +154,25 @@
 }
 
 @mixin placeholder($attr) {
-	
+
 }
 
 @mixin blur($radius) {
--webkit-filter: blur($radius); 
+-webkit-filter: blur($radius);
    -moz-filter: blur($radius);
     -ms-filter: blur($radius);
      -o-filter: blur($radius);
         filter: blur($radius);
-        filter: url(#blur);   
+        filter: url(#blur);
         filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='$radius');
+}
+
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
+
+@mixin retina-background-image($file, $type, $size) {
+  background-image: url($file + '.' + $type);
+  @media #{$retina} {
+    background-image: url($file + '@2x.' + $type);
+    background-size: $size;
+  }
 }

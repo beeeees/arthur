@@ -27,7 +27,7 @@
 var project             = 'arthur'; // Project Name.
 
 
-var styleSRC            = './scss/main.scss'; // Path to main .scss file.
+var styleSRC            = './sass/style.scss'; // Path to main .scss file.
 var styleDestination    = './'; // Path to place the compiled CSS file.
                 // Defualt set to root folder.
 
@@ -45,7 +45,7 @@ var jsCustomFile        = 'custom'; // Compiled JS custom file name.
 
 
 // Watch files paths.
-var styleWatchFiles     = './scss/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var styleWatchFiles     = './sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var vendorJSWatchFiles  = './javascript/vendors/*.js'; // Path to all vendors JS files.
 var customJSWatchFiles  = './javascript/custom/*.js'; // Path to all custom JS files.
 var phpWatchFiles  = './*.php'; // Path to all custom php files.
