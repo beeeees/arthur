@@ -1,3 +1,20 @@
 header {
-	
+  .logo {
+    position: relative;;
+    z-index: 101;
+    img {
+      width: 125px;
+      height: 51px;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    position: relative;
+    z-index: 101;
+    img {
+      width: 125px;
+      height: 51px;
+    }
+  }
 }
